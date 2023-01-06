@@ -1,7 +1,7 @@
 var server = require('server');
 
 server.get('World', function (req, res, next) {
-    res.json({ msg: 'Sugaraaaaaaa' });
+    res.json({ msg: 'Hello World!' });
     next();
 });
 
