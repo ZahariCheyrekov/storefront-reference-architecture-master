@@ -31,7 +31,7 @@
 }
 
 .category-tile {
-    border: 1px solid white;
+    border: 1px solid $white;
 }
 
 .half-height {
@@ -148,7 +148,7 @@
 }
 
 .home-email-signup {
-    background-color: $grey6;
+    background-color: $white;
 
     > .container {
         padding-top: 0.625em;
