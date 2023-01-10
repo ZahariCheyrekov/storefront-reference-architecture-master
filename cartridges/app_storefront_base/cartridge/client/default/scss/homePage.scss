@@ -92,7 +92,6 @@
 }
 
 .container.home-categories {
-
     @include media-breakpoint-only(xs) {
         padding-left: 0;
         padding-right: 0;
@@ -131,13 +130,21 @@
             font-size: 5.5em;
             font-weight: 200;
 
-            @include media-breakpoint-down(lg) { font-size: 4.5em; }
+            @include media-breakpoint-down(lg) {
+                font-size: 4.5em;
+            }
 
-            @include media-breakpoint-down(md) { font-size: 3.4em; }
+            @include media-breakpoint-down(md) {
+                font-size: 3.4em;
+            }
 
-            @include media-breakpoint-down(sm) { font-size: 3em; }
+            @include media-breakpoint-down(sm) {
+                font-size: 3em;
+            }
 
-            @include media-breakpoint-down(xs) { font-size: 2.5em; }
+            @include media-breakpoint-down(xs) {
+                font-size: 2.5em;
+            }
         }
 
         a {
@@ -159,4 +166,10 @@
         padding-top: 0.375em;
         color: $white;
     }
+}
+
+.homepage-extended-data {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 600px;
 }
