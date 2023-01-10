@@ -1,5 +1,14 @@
 'use strict';
 
+/**
+ * @namespace Home
+ */
+
+/**
+ * @function
+ * extends Home controller from app_storefront_base
+ */
+
 var server = require('server');
 server.extend(module.superModule);
 

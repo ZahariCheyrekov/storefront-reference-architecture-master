@@ -1,5 +1,15 @@
 'use strict';
 
+/**
+ * @namespace Default
+ */
+
+/**
+ * @function
+ * extends Default controller from app_storefront_base
+ */
+
+
 var server = require('server');
 server.extend(module.superModule);
 
