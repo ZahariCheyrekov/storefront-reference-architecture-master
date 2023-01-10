@@ -22,7 +22,7 @@ var userLoggedIn = require('*/cartridge/scripts/middleware/userLoggedIn');
  * @param {renders} - isml
  * @param {serverfunction} - get
  */
-server.get('Start', userLoggedIn.validateLoggedIn, consentTracking.consent, cache.applyDefaultCache, function (req, res, next) {
+server.get('Start', consentTracking.consent, cache.applyDefaultCache, userLoggedIn.validateLoggedIn, function (req, res, next) {
     var Site = require('dw/system/Site');
     var PageMgr = require('dw/experience/PageMgr');
     var pageMetaHelper = require('*/cartridge/scripts/helpers/pageMetaHelper');
