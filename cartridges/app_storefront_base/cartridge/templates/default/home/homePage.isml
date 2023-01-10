@@ -5,7 +5,8 @@
         assets.addCss('/css/homePage.css');
     </isscript>
 
-    <!-- +1.888.555.0199 --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demandware customers can remove this.-->
+    <!-- +1.888.555.0199 -->
+    <!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demandware customers can remove this.-->
     <div class="home-main homepage">
         <isslot id="home-main-m" description="Main home page slot." context="global" />
     </div>
@@ -31,9 +32,12 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="hpEmailSignUp" placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}" aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
+                            <input type="text" class="form-control" name="hpEmailSignUp"
+                                placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}"
+                                aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
                             <span class="input-group-append">
-                                <button type="submit" class="btn btn-primary subscribe-email" data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${Resource.msg('button.form.emailsignup', 'homePage', null)} </button>
+                                <button type="submit" class="btn btn-primary subscribe-email"
+                                    data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${Resource.msg('button.form.emailsignup', 'homePage', null)} </button>
                             </span>
                         </div>
                     </div>
@@ -41,5 +45,9 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div class="homepage-extended-data">
+        <h2 class="name">${pdict.extendedName}</h2>
+        <h2 class="player-level">${pdict.extendedPlayerLevel}</h2>
     </div>
 </isdecorate>
