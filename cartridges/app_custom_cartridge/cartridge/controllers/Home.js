@@ -10,14 +10,17 @@
  */
 
 var server = require('server');
+var HookMgr = require('dw/system/HookMgr');
 server.extend(module.superModule);
 
 server.append('Show', function (req, res, next) {
     var viewData = res.getViewData();
     viewData.extendedName = 'John Doe';
 
-    var editViewData = require('*/cartridge/scripts/hooks/editViewData.js');
-    var data = editViewData(viewData);
+    var data;
+    if (HookMgr.hasHook('app.scripts.hooks.editViewData')) {
+        data = HookMgr.callHook('app.scripts.hooks.editViewData', 'edit', viewData);
+    }
 
     res.setViewData(data);
     next();
