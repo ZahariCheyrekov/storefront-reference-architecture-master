@@ -5,9 +5,9 @@
  * @returns {Object} the result of extended viewData
  *
  */
-function editViewData(viewData) {
+function edit(viewData) {
     viewData.extendedPlayerLevel = 100;
     return viewData;
 }
 
-module.exports = editViewData;
+exports.edit = edit;
