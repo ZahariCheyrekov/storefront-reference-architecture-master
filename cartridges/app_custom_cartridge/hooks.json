@@ -1,8 +1,8 @@
 {
     "hooks": [
         {
-            "name": "app.editViewData",
-            "script": "./cartridge/scripts/hooks/editViewData.js"
+            "name": "app.scripts.hooks.editViewData",
+            "script": "./cartridge/scripts/hooks/editViewData"
         }
     ]
 }
