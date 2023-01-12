@@ -42,7 +42,6 @@ function getProductCategory(productId) {
  * @param {string} productId
  * @returns {dw.catalog.ProductPriceModel | null}
  */
-
 function getProductPrices(productId) {
     var product = ProductMgr.getProduct(productId);
 
@@ -55,12 +54,28 @@ function getProductPrices(productId) {
 
 
 /**
+ * @function getProductCategories
+ * Returns all category assignments for this product in any catalog
+ * @param {String} productId
+ * @returns {Collection | null}
+ */
+function getProductCategories(productId) {
+    var product = ProductMgr.getProduct(productId);
+
+    if (product) {
+        return product.getAllCategories();
+    }
+
+    return null;
+}
+
+
+/**
  * @function getCustomerById
  * Returns the customer with the specified customer number
  * @param {string} customerId
  * @returns {dw.customer.CustomerMgr | null}
  */
-
 function getCustomerById(customerId) {
     var customer = CustomerMgr.getCustomerByCustomerNumber(customerId);
     return customer;
@@ -85,13 +100,6 @@ function isCustomerAssignedToGroup(customerId, groupId) {
 }
 
 
-
-
-
-
-
-
-
 /**
  * @constructor
  * @param {string} productId
@@ -102,6 +110,7 @@ function DWScriptModel(productId, customerId, groupId) {
         this.product = getProductById(productId);
         this.productCategory = getProductCategory(productId);
         this.productPriceModel = getProductPrices(productId);
+        this.productCategories = getProductCategories(productId);
     }
 
     if (customerId) {
