@@ -23,6 +23,8 @@ cartridges/app_storefront_base/cartridge/static/en_GB/css/
 cartridges/app_storefront_base/cartridge/static/en_GB/js/
 cartridges/app_storefront_base/cartridge/static/en_GB/fonts/
 
+cartridges/sfcc_dev_tools
+
 coverage/
 npm-debug.log
 cartridges.zip
