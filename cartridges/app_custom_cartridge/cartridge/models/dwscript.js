@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Function accepts productId and returns product by the given id
+ * Accepts productId and returns product by the given id
  * @param {String} productId
  * @returns {dw.catalog.Product | null}
  */
@@ -12,6 +12,26 @@ function getProductById(productId) {
 }
 
 
+/**
+ * Accepts productId and returns the primary category of the
+ * product within the current site catalog
+ * @param {String} productId
+ * @returns {String | null}
+ */
+function getProductCategory(productId) {
+    var ProductMgr = require('dw/catalog/ProductMgr');
+    var product = ProductMgr.getProduct(productId);
+
+    if (product) {
+        var productCategory = product.getPrimaryCategory();
+
+        if (productCategory) {
+            return productCategory.displayName;
+        }
+    }
+
+    return 'There is no such product with the given id.';
+}
 
 
 
