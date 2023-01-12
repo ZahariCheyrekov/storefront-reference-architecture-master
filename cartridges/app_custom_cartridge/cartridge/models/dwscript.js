@@ -52,7 +52,16 @@ function getProductPrices(productId) {
 }
 
 
+/**
+ * Accepts customerId and returns the customer with the specified customer number
+ * @param {String} customerId
+ * @returns {dw.customer.CustomerMgr | null}
+ */
 
+function getCustomerById(customerId) {
+    var customer = CustomerMgr.getCustomerByCustomerNumber(customerId);
+    return customer;
+}
 
 
 
