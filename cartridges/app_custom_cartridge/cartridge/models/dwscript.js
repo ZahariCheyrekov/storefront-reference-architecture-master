@@ -1,7 +1,7 @@
 'use strict';
 
-
 var ProductMgr = require('dw/catalog/ProductMgr');
+var CustomerMgr = require('dw/customer/CustomerMgr');
 
 /**
  * Accepts productId and returns product by the given id
@@ -43,6 +43,7 @@ function getProductCategory(productId) {
 
 function getProductPrices(productId) {
     var product = ProductMgr.getProduct(productId);
+
     if (product) {
         return product.getPriceModel();
     }
@@ -63,23 +64,19 @@ function getProductPrices(productId) {
 
 
 /**
- * @returns
+ * @constructor
+ * @param {String} productId
+ * @param {String} customerId
  */
-function getCustomerID(customer) {
-    return customer.getID();
-}
-
-/**
- *
- * @param {*} customer
- */
-function DWScriptModel(customer, productId, customerId) {
-    this.ID = getCustomerID(customer);
-
+function DWScriptModel(productId, customerId) {
     if (productId) {
         this.product = getProductById(productId);
         this.productCategory = getProductCategory(productId);
         this.productPriceModel = getProductPrices(productId);
+    }
+
+    if (customerId) {
+        this.customerById = getCustomerById(customerId);
     }
 }
 
