@@ -7,7 +7,6 @@
 var server = require('server');
 var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
-var userLoggedIn = require('*/cartridge/scripts/middleware/userLoggedIn');
 var DWScriptModel = require('*/cartridge/models/dwscript');
 
 /**
