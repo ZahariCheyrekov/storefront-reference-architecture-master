@@ -46,7 +46,8 @@ function getProductPrices(productId) {
     var product = getProductById(productId);
 
     if (product) {
-        return product.getPriceModel();
+        var priceModel = product.getPriceModel();
+        return priceModel;
     }
 
     return null;
@@ -108,6 +109,7 @@ function isCustomerAssignedToGroup(customerId, groupId) {
 function DWScriptModel(productId, customerId, groupId) {
     if (productId) {
         this.product = getProductById(productId);
+        this.productName = getProductById(productId);
         this.productCategory = getProductCategory(productId);
         this.productPriceModel = getProductPrices(productId);
         this.productCategories = getProductCategories(productId);
