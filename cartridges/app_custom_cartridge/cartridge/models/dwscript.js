@@ -22,7 +22,7 @@ function getProductById(productId) {
  * @returns {string | null}
  */
 function getProductCategory(productId) {
-    var product = ProductMgr.getProduct(productId);
+    var product = getProductById(productId);
 
     if (product) {
         var productCategory = product.getPrimaryCategory();
@@ -43,7 +43,7 @@ function getProductCategory(productId) {
  * @returns {dw.catalog.ProductPriceModel | null}
  */
 function getProductPrices(productId) {
-    var product = ProductMgr.getProduct(productId);
+    var product = getProductById(productId);
 
     if (product) {
         return product.getPriceModel();
@@ -60,7 +60,7 @@ function getProductPrices(productId) {
  * @returns {Collection | null}
  */
 function getProductCategories(productId) {
-    var product = ProductMgr.getProduct(productId);
+    var product = getProductById(productId);
 
     if (product) {
         return product.getAllCategories();
