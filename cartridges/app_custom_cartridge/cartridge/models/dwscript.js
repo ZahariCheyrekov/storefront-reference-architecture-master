@@ -57,7 +57,7 @@ function getProductPrices(productId) {
  * @function getProductCategories
  * Returns all category assignments for this product in any catalog
  * @param {String} productId
- * @returns {Collection | null}
+ * @returns {Object | null}
  */
 function getProductCategories(productId) {
     var product = getProductById(productId);
@@ -74,7 +74,7 @@ function getProductCategories(productId) {
  * @function getCustomerById
  * Returns the customer with the specified customer number
  * @param {string} customerId
- * @returns {dw.customer.CustomerMgr | null}
+ * @returns {dw.customer.Customer | null}
  */
 function getCustomerById(customerId) {
     var customer = CustomerMgr.getCustomerByCustomerNumber(customerId);
@@ -90,7 +90,7 @@ function getCustomerById(customerId) {
  * @returns {boolean}
  */
 function isCustomerAssignedToGroup(customerId, groupId) {
-    var customer = CustomerMgr.getCustomerByCustomerNumber(customerId);
+    var customer = getCustomerById(customerId);
 
     if (customer) {
         return customer.isMemberOfCustomerGroup(groupId);
