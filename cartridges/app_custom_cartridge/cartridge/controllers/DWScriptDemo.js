@@ -27,7 +27,7 @@ server.get('Show', consentTracking.consent, function (req, res, next) {
 
     var dwSriptModel = new DWScriptModel(customer);
 
-    res.render('dwscriptdemo',dwSriptModel);
+    res.render('dwscriptdemo', dwSriptModel);
     next();
 }, pageMetaData.computedPageMetaData);
 
