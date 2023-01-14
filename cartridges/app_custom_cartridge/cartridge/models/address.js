@@ -8,7 +8,7 @@ function address(object, demo_prop) {
         value: demo_prop
     });
 
-    return object;
+    this.address = object;
 }
 
 module.exports = address;
