@@ -32,7 +32,12 @@ function address(addressObject) {
         this.address.stateCode = addressHelpers.findCurrentStateValue(this.address.stateCode, request.locale);
     }
 
+    if (this.address && addressObject && addressObject.custom && 'storeID' in addressObject.custom &&
+        addressObject.custom.storeID) {
+        this.storeID = addressObject.custom.storeID;
+    }
 
+  
 }
 
 module.exports = address;
