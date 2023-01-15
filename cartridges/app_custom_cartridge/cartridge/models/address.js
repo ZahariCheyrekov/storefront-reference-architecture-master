@@ -17,7 +17,10 @@ var base = module.superModule;
 var addressHelpers = require('*/cartridge/scripts/helpers/addressHelpers');
 
 /**
-
+ * Address class that represents and orderAddress
+ * @param {dw.order.OrderAddress} addressObject - User's address
+ * @constructor
+ */
 function address(addressObject) {
     base.call(this, addressObject);
 
