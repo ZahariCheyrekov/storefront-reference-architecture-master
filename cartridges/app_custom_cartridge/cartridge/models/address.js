@@ -43,7 +43,11 @@ function address(addressObject) {
         this.address.phone = addressObject.phone.replace(addressObject.custom.phoneCode, '');
     }
 
- 
+    if (this.address && addressObject && addressObject.phone && 'raw' in addressObject && 'custom' in addressObject.raw &&
+        addressObject.raw.custom.phoneCode) {
+        this.address.phoneCode = addressObject.raw.custom.phoneCode;
+        this.address.phone = addressObject.phone.replace(addressObject.raw.custom.phoneCode, '');
+    }
 }
 
 module.exports = address;
