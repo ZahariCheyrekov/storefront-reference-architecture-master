@@ -37,7 +37,13 @@ function address(addressObject) {
         this.storeID = addressObject.custom.storeID;
     }
 
-  
+    if (this.address && addressObject && addressObject.phone && addressObject.custom && 'phoneCode' in addressObject.custom &&
+        addressObject.custom.phoneCode) {
+        this.address.phoneCode = addressObject.custom.phoneCode;
+        this.address.phone = addressObject.phone.replace(addressObject.custom.phoneCode, '');
+    }
+
+ 
 }
 
 module.exports = address;
