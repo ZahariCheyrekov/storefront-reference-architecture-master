@@ -1,0 +1,7 @@
+<iscomment> <isset
+  name  = var_name                   \\required
+  value = var_value                  \\required
+  scope = "session"|"request"|"page" \\required
+/> </iscomment>
+
+<isset name="sessionVariable" value="1" scope="session"/>
