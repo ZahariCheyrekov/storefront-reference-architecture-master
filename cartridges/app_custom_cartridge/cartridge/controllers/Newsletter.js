@@ -20,8 +20,8 @@ function validateEmail(email) {
 }
 
 /**
- * Account-EditProfile : The Account-EditProfile endpoint renders the page that allows a shopper to edit their profile. The edit profile form is prefilled with the shopper's first name, last name, phone number and email
- * @name Base/Account-EditProfile
+ * Newsletter-Show : The Newsletter-Show endpoint renders the page that allows a customer to send a newsletter
+ * @name Newsletter-Show
  * @function
  * @memberof Account
  * @param {middleware} - server.middleware.https
@@ -48,18 +48,14 @@ server.get(
 );
 
 /**
- * Account-SaveProfile : The Account-SaveProfile endpoint is the endpoint that gets hit when a shopper has edited their profile
- * @name Base/Account-SaveProfile
+ * Newsletter-Save : The Newsletter-Save endpoint is the endpoint that gets hit when a user has submited the newsletter form
+ * @name Newsletter-Save
  * @function
  * @memberof Account
  * @param {middleware} - server.middleware.https
  * @param {middleware} - csrfProtection.validateAjaxRequest
- * @param {httpparameter} - dwfrm_profile_customer_firstname - Input field for the shoppers's first name
- * @param {httpparameter} - dwfrm_profile_customer_lastname - Input field for the shopper's last name
- * @param {httpparameter} - dwfrm_profile_customer_phone - Input field for the shopper's phone number
- * @param {httpparameter} - dwfrm_profile_customer_email - Input field for the shopper's email address
- * @param {httpparameter} - dwfrm_profile_customer_emailconfirm - Input field for the shopper's email address
- * @param {httpparameter} - dwfrm_profile_login_password  - Input field for the shopper's password
+ * @param {httpparameter} - fullname - Input field for the customer fullname
+ * @param {httpparameter} - skinType - Input field for the customer skin type
  * @param {httpparameter} - csrf_token - hidden input field CSRF token
  * @param {category} - sensititve
  * @param {returns} - json
