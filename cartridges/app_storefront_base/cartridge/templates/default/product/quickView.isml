@@ -61,10 +61,6 @@
                     </div>
                 </section>
 
-<p>
-                    Promotion
-</p>
-
                 <isif condition="${product.productType !== 'bundle'}">
                     <!-- Options -->
                     <isif condition="${product.options && product.options.length > 0}">
