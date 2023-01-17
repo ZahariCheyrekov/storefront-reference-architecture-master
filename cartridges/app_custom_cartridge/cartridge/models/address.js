@@ -3,7 +3,7 @@
 var base = module.superModule;
 
 /**
- * Extended address class that represents and OrderAddress
+ * Extended address class that represents an OrderAddress
  * @param {dw.order.OrderAddress} addressObject - User's address
  * @constructor
  */
