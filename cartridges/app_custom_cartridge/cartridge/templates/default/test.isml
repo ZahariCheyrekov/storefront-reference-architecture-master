@@ -1,1 +1,11 @@
-<h2>Custom name: ${pdict.customName}</h2>
+<isdecorate template="common/layout/page">
+    <isset name="customName" value="${0}" scope="page" />
+
+    <isif condition="${customName}">
+        <isset name="customName" value="${customName + 1}" scope="page" />
+    </isif>
+
+    <div class="custom-prop">
+        <isprint value="${customName}" />
+    </div>
+</isdecorate>
