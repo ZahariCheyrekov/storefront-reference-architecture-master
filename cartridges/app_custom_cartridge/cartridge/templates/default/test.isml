@@ -1,11 +1,13 @@
 <isdecorate template="common/layout/page">
-    <isset name="customName" value="${0}" scope="page" />
+    <isset name="name" value="${1}" scope="page" />
 
-    <isif condition="${customName}">
-        <isset name="customName" value="${customName + 1}" scope="page" />
+    <isif condition="${!sesstion.custom.name}">
+        <isset name="name" value="${test}" scope="session" />
+    <iselse/>
+        <isset name="name" value="${session.custom.name += 1}" scope="session" />
     </isif>
 
     <div class="custom-prop">
-        <isprint value="${customName}" />
+        <isprint value="${session.custom.name}" />
     </div>
 </isdecorate>
