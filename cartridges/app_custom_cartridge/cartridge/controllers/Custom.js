@@ -27,7 +27,8 @@ server.get('List', function (req, res, next) {
 
     res.render('search/searchResults', {
         searchResults: results,
-        query: query
+        query: query,
+        format: req.httpParameterMap.format
     });
     next();
 }, pageMetaData.computedPageMetaData);
