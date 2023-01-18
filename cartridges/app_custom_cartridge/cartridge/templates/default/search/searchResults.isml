@@ -1,5 +1,14 @@
 <isdecorate template="common/layout/page">
-    <isif condition="${!empty(pdict.query)}">
-        You searched for ${pdict.query}
+    <isset name="resultsCount" value="${pdict.searchResults.count}" scope="page" />
+    <isset name="query" value="${pdict.query}" scope="page" />
+
+    <isif condition="${resultsCount > 0}">
+        <div>
+            Results searching for ${query} -
+            <isprint value="${resultsCount}" style="INTEGER" />
+        </div>
+
+    <iselse/>
+        No results for ${query}
     </isif>
 </isdecorate>
