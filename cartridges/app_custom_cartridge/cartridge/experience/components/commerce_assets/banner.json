@@ -1,0 +1,42 @@
+{
+    "name": "Banner",
+    "description": "A banner.",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "image",
+            "name": "Banner Image Configuration",
+            "description": "You can define the image file, size and alt text for the banner image.",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Banner Image",
+                    "description": "The image shown by the banner.",
+                    "type": "file",
+                    "required": true
+                },
+                {
+                    "id": "alt",
+                    "name": "Banner Image Alt Text",
+                    "description": "The image alt text shown by the banner.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "size",
+                    "name": "Size",
+                    "description": "The banner size.",
+                    "type": "enum",
+                    "values": [
+                        "small",
+                        "medium",
+                        "large"
+                    ],
+                    "required": true,
+                    "default_value": "medium"
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
