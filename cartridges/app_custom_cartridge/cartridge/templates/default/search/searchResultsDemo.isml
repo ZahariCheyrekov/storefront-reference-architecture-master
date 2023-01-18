@@ -3,28 +3,22 @@
 <iselse/>
     <isset name="decorator" value="common/layout/page" scope="page" />
 </isif>
-
 <isdecorate template="${decorator}">
     <isset name="resultsCount" value="${pdict.searchResults.count}" scope="page" />
     <isset name="query" value="${pdict.query}" scope="page" />
-
     <isif condition="${resultsCount > 0}">
         <div>
             Results searching for ${query} -
             <isprint value="${resultsCount}" style="INTEGER" />
         </div>
-
-        <isloop items="${pdict.searchResults.productSearchHits}" var="productHit" status="counter">
-            <isif condition="${countrer.count % 3 === 1}">
-                <div class="row justify-content-center">
-            </isif>
-            <isset name="product" value="${productHit.getProduct()}" scope="page" />
-            <isinclude url="${URLUtils.url(" Tile-Show", "pid", product.ID, "swatches", true, "ratings", true)}" />
-            <isif condition="${counter.count % 3 === 0}">
-                </div>
-                <hr />
-            </isif>
-        </isloop>
+        <ul class="row">
+            <isloop items="${pdict.searchResults.productSearchHits}" var="productHit" status="counter">
+                <li class="row justify-content-center">
+                    <isset name="product" value="${productHit.getProduct()}" scope="page" />
+                    <isinclude url="${URLUtils.url("Tile-Show", "pid", product.ID, "swatches", true, "ratings", true)}" />
+                </li>
+            </isloop>
+        </ul>
     <iselse/>
         No results for ${query}
     </isif>
