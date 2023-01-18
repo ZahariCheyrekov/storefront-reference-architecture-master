@@ -8,6 +8,24 @@
             <isprint value="${resultsCount}" style="INTEGER" />
         </div>
 
+        <isloop items="${pdict.searchResults.productSearchHits}" var="productHit" status="counter">
+            <isif condition="${countrer.count % 3 === 1}">
+                <div class="row justify-content-center">
+            </isif>
+            <isset name="product" value="${productHit.getProduct()}" scope="page" />
+            <div class="col-md-4 text-center mb-5">
+                <a href="${URLUtils.url("Product-Show", "pid", product.ID)}">
+                    <div>${product.name}</div>
+                    <div>
+                        <img src="${product.getImage('small').httpURL}" alt="${product.getImage('small').alt}">
+                    </div>
+                </a>
+            </div>
+            <isif condition="${counter.count % 3 === 0}">
+                </div>
+                <hr />
+            </isif>
+        </isloop>
     <iselse/>
         No results for ${query}
     </isif>
