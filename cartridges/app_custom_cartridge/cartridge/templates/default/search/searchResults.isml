@@ -1,4 +1,10 @@
-<isdecorate template="common/layout/page">
+<isif condition="${pdict.format == " ajax"}">
+    <isset name="decorator" value="common/layout/blank" scope="page" />
+<iselse/>
+    <isset name="decorator" value="common/layout/page" scope="page" />
+</isif>
+
+<isdecorate template="${decorator}">
     <isset name="resultsCount" value="${pdict.searchResults.count}" scope="page" />
     <isset name="query" value="${pdict.query}" scope="page" />
 
@@ -13,14 +19,7 @@
                 <div class="row justify-content-center">
             </isif>
             <isset name="product" value="${productHit.getProduct()}" scope="page" />
-            <div class="col-md-4 text-center mb-5">
-                <a href="${URLUtils.url("Product-Show", "pid", product.ID)}">
-                    <div>${product.name}</div>
-                    <div>
-                        <img src="${product.getImage('small').httpURL}" alt="${product.getImage('small').alt}">
-                    </div>
-                </a>
-            </div>
+            <isinclude url="${URLUtils.url(" Tile-Show", "pid", product.ID, "swatches", true, "ratings", true)}" />
             <isif condition="${counter.count % 3 === 0}">
                 </div>
                 <hr />
