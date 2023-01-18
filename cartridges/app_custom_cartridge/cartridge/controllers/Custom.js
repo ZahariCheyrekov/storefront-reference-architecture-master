@@ -25,7 +25,7 @@ server.get('List', function (req, res, next) {
     results.setSearchPhrase(query);
     results.search();
 
-    res.render('search/searchResults', {
+    res.render('search/searchResultsDemo', {
         searchResults: results,
         query: query,
         format: req.httpParameterMap.format
