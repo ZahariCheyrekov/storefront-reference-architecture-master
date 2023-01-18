@@ -121,7 +121,12 @@
                             </div>
                         </div>
 
-                     
+                        <isif condition="${pdict.product.raw.custom.showPromo == true}">
+                            <div>
+                                Show promo:
+                                <isprint value="${pdict.product.raw.custom.showPromo}" encoding="on" />
+                            </div>
+                        </isif>
 
                         <!-- Cart and [Optionally] Apple Pay -->
                         <isinclude template="product/components/addToCartProduct" />
