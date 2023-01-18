@@ -33,4 +33,24 @@ server.get('List', function (req, res, next) {
     next();
 }, pageMetaData.computedPageMetaData);
 
+/**
+ * Custom-ShowContent : This emdpoint is called to show the content asset template
+ * @name Custom-ShowContent
+ * @function
+ * @memberof ShowContent
+ * @param {category} - non-sensitive
+ * @param {renders} - isml
+ * @param {serverfunction} - get
+ */
+server.get('ShowContent', function (req, res, next) {
+    const ContentMgr = require('dw/content/ContentMgr');
+    const cid = req.httpParameterMap.cid;
+    const content = ContentMgr.getContent(cid);
+
+    res.render('content/contentAsset', {
+        content: content
+    });
+    next();
+}, pageMetaData.computedPageMetaData);
+
 module.exports = server.exports();
