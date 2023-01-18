@@ -1,0 +1,6 @@
+<section>
+    <h3>
+        This is my banner
+    </h3>
+    <isprint value="${pdict.bannerMessage}" encoding="on" />
+</section>
