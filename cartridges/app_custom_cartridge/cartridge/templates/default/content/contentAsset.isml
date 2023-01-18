@@ -1,0 +1,5 @@
+<isdecorate template="common/layout/page">
+    <isif condition="${!empty(pdict.content)}">
+        <isprint value="${content.custom.body}" encoding="off" />
+    </isif>
+</isdecorate>
