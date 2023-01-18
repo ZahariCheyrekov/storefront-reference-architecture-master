@@ -1,0 +1,20 @@
+searchResults.isml template contains body of a isdecorate tag that is used to
+decorate the enclosed content with the contents of the specified (decorator)
+template. The decorator template has the tag <isreplace/> identifying where the
+decorated content shall be included. Typically, only one tag (<isreplace/>) is
+used in the decorator template. However, multiple or zero <isreplace/> tags can
+also be used.
+
+If the decorating template doesn't have an <isreplace/> tag, the
+decorated content is omitted from the resultant output. If the decorator template
+has multiple <isreplace/> tags, the content to be decorated will be included for
+each <isreplace/> tag.
+
+Template holds isscript tag that supporst server-side scripts for scriptlets and
+inline script expressions, using ${ }syntax. In the tag scope is degined an assets
+variable that is used to apply different assets to the given page by adding style
+and script.
+
+It uses isinclude tag that includes the contents of one template inside another
+or the contents of another URL. It is refered to searchResultsNoDecorator.isml
+template.
