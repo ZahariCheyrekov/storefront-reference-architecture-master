@@ -1,0 +1,5 @@
+<isdecorate template="common/layout/page">
+    <isif condition="${!empty(pdict.query)}">
+        You searched for ${pdict.query}
+    </isif>
+</isdecorate>
