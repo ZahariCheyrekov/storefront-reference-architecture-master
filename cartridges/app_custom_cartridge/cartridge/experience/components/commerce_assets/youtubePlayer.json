@@ -1,0 +1,22 @@
+{
+    "name": "YouTubePlayer",
+    "description": "A YouTube Player.",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "youtubePlayer",
+            "name": "YouTube Configuration",
+            "description": "You can define what YouTube video to be displayed from this frame.",
+            "attribute_definitions": [
+                {
+                    "id": "youtubeID",
+                    "name": "YouTube Video ID",
+                    "description": "The YouTube video id",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
