@@ -1,0 +1,22 @@
+{
+    "name": "Instagram Post",
+    "description": "Instagram post from the page of the given brand.",
+    "group": "commerce_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "instagramPost",
+            "name": "Instagram Post",
+            "description": "You can define what Instagram post to be displayed by entering Instagram post url.",
+            "attribute_definitions": [
+                {
+                    "id": "instagramURL",
+                    "name": "Instagram Post URL",
+                    "description": "The Instagram post url",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
