@@ -1,0 +1,3 @@
+<div class="container home-product-tiles homepage">
+    <isslot id="slot-user" description="Slot for user information" context="global" />
+</div>
