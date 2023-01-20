@@ -1,0 +1,6 @@
+<isdecorate template="/common/layout/page">
+    <isif condition="${!empty(pdict.content)}">
+        <isprint value="${pdict.content.custom.body}" encoding="off" />
+    </isif>
+    <isslot id="header-banner-m" description="Slot above the site header" context="global" />
+</isdecorate>
