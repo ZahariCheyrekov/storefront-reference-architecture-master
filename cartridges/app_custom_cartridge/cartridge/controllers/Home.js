@@ -23,6 +23,9 @@ server.append('Show', function (req, res, next) {
     }
 
     res.setViewData(data);
+
+    // show the user slot data
+    // res.render('slots/content/userSlotHtml');
     next();
 });
 
