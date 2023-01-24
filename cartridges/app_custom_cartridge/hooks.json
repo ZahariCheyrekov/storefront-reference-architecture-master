@@ -3,6 +3,14 @@
         {
             "name": "app.scripts.hooks.editViewData",
             "script": "./cartridge/scripts/hooks/editViewData"
+        },
+        {
+            "name": "app.payment.processor.practice_payment_card",
+            "script": "./cartridge/scripts/hooks/payment/processor/practice_payment_card"
+        },
+        {
+            "name": "app.payment.form.processor.practice_payment_card",
+            "script": "./cartridge/scripts/hooks/payment/processor/practice_payment_card_form_processor"
         }
     ]
 }
