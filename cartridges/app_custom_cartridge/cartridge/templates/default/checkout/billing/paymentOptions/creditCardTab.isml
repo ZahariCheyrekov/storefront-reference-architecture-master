@@ -1,0 +1,25 @@
+<li class="nav-item" data-method-id="${paymentOption.ID}">
+
+    <isscript>
+
+        let classForCardTab = 'nav-link credit-card-tab' + (loopstatus.first ? ' active' : '');
+
+    </isscript>
+
+    <a class="${classForCardTab}" data-toggle="tab" href="${'#credit-card-content-' + paymentOption.ID}" role="tab">
+
+        <img class="credit-card-option"
+
+                src="${URLUtils.staticURL('/images/credit.png')}"
+
+                height="32"
+
+                alt="${paymentOption.name}"
+
+                title="${paymentOption.name}"
+
+        >
+
+    </a>
+
+</li>
