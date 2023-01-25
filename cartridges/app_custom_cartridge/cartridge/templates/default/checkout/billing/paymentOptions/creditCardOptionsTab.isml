@@ -1,0 +1,5 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopstatus">
+    <isif condition="${paymentOption.ID === 'CREDIT_CARD' || paymentOption.ID === 'practice_payment_card'}">
+        <isinclude template="checkout/billing/paymentOptions/creditCardTab" />
+    </isif>
+</isloop>
