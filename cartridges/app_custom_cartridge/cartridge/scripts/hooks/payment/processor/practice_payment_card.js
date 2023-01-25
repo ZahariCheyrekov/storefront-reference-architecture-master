@@ -124,7 +124,7 @@ function Authorize(orderNumber, paymentInstrument, paymentProcessor) {
     let error = false;
 
     try {
-        if (session.customer.profile.email === 'xxx@host.com') {
+        if (session.customer.profile.email === 'zahari.cheyrekov@gmail.com') {
             Transaction.wrap(function () {
                 paymentInstrument.paymentTransaction.setTransactionID(orderNumber);
                 paymentInstrument.paymentTransaction.setPaymentProcessor(paymentProcessor);
