@@ -3,6 +3,9 @@
   "version": "6.3.0",
   "description": "Storefront Reference Architecture",
   "main": "index.js",
+  "paths": {
+    "base": "./cartridges/app_storefront_base/"
+  },
   "engines": {
     "node": ">=4.0"
   },
@@ -114,7 +117,7 @@
     "last 2 versions",
     "ie >= 10"
   ],
-  "packageName": "app_storefront_base",
+  "packageName": "app_custom_cartridge",
   "babel": {
     "presets": [
       "env"
