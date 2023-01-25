@@ -197,7 +197,7 @@ function Authorize(orderNumber, paymentInstrument, paymentProcessor) {
 
     if (
         !customer.profile ||
-        (customer.profile && customer.profile.email !== "xxx@host.com")
+        (customer.profile && customer.profile.email !== "zahari.cheyrekov@gmail.com")
     ) {
         error = true;
         serverErrors.push(Resource.msg("error.invalid.host", "checkout", null));
