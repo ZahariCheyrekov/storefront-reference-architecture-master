@@ -15,7 +15,7 @@ const cache = require('*/cartridge/scripts/middleware/cache');
  * @param {renders} - isml
  * @param {serverfunction} - get
  */
-server.get('Show', function (req, res, next) {
+server.get('ShowHTTP', function (req, res, next) {
     const httpClient = new dw.net.HTTPClient();
     httpClient.open('GET', 'https://catfact.ninja/fact');
     httpClient.send();
