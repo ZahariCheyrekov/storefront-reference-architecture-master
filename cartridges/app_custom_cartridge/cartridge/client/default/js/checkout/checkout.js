@@ -1,12 +1,12 @@
 'use strict';
 
-var customerHelpers = require('./customer');
-var addressHelpers = require('./address');
-var shippingHelpers = require('./shipping');
-var billingHelpers = require('./billing');
-var summaryHelpers = require('./summary');
-var formHelpers = require('./formErrors');
-var scrollAnimate = require('../components/scrollAnimate');
+var customerHelpers = require('base/customer');
+var addressHelpers = require('base/address');
+var shippingHelpers = require('base/shipping');
+var billingHelpers = require('base/billing');
+var summaryHelpers = require('base/summary');
+var formHelpers = require('base/formErrors');
+var scrollAnimate = require('base/components/scrollAnimate');
 
 
 /**
@@ -426,7 +426,8 @@ var scrollAnimate = require('../components/scrollAnimate');
                 // Handle Payment option selection
                 //
                 $('input[name$="paymentMethod"]', plugin).on('change', function () {
-                    $('.credit-card-form').toggle($(this).val() === 'CREDIT_CARD');
+                    $('.credit-card-form').toggle($(this).val() === 'CREDIT_CARD' ||
+                        ($(this)).val() === 'practice_payment_card');
                     $('.credit-card-form').toggle($(this).val() === 'practice_payment_card');
                 });
 
