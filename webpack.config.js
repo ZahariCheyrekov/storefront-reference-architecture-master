@@ -25,7 +25,7 @@ module.exports = [{
     name: 'js',
     entry: jsFiles,
     output: {
-        path: path.resolve('./cartridges/app_storefront_base/cartridge/static'),
+        path: path.resolve('./cartridges/app_custom_cartridge/cartridge/static'),
         filename: '[name].js'
     },
     module: {
