@@ -318,10 +318,7 @@ var scrollAnimate = require("../components/scrollAnimate");
                         if (
                             $(".payment-information").data(
                                 "payment-method-id"
-                            ) === "CREDIT_CARD" ||
-                            $(".payment-information").data(
-                                "payment-method-id"
-                            ) === "practice_payment_card"
+                            ) === "CREDIT_CARD"
                         ) {
                             if (
                                 !$(".payment-information").data(
@@ -544,8 +541,7 @@ var scrollAnimate = require("../components/scrollAnimate");
                     "change",
                     function () {
                         $(".credit-card-form").toggle(
-                            $(this).val() === "CREDIT_CARD" ||
-                            $(this).val() === "practice_payment_card"
+                            $(this).val() === "CREDIT_CARD"
                         );
                     }
                 );
