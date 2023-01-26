@@ -12,7 +12,6 @@ function getStarshipInfo() {
         {
             createRequest: function (svc, args) {
                 svc.setRequestMethod('GET');
-                svc.addHeader('Content-Type', 'application/json');
                 return args;
             },
             parseResponse: function (svc, client) {
@@ -23,6 +22,14 @@ function getStarshipInfo() {
                     /cost_in_credits\: \".*?\"/,
                     "cost_in_credits:$$$$$$$$$$$$$$$$$$$"
                 );
+            },
+            getRequestLogMessage: function(msg) {
+                // Convert to a String here, doing any filtering...
+                return msg;
+            },
+            getResponseLogMessage: function(msg) {
+                // Convert to a String here, doing any filtering...
+                return msg;
             }
         });
 
