@@ -1,0 +1,6 @@
+<div class="container">
+    <h1>Info about Death Star</h1>
+    <h2>Name: ${pdict.swapiInfo.name}</h2>
+    <h2>Name: ${pdict.swapiInfo.manufacturer}</h2>
+    <h2>Starship Class: ${pdict.swapiInfo.starship_class}</h2>
+</div>
