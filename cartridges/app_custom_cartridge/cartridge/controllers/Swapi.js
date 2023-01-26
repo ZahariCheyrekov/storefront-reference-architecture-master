@@ -6,7 +6,6 @@
 
 const server = require('server');
 const swapiService = require('*/cartridge/scripts/swapiService');
-const cache = require('*/cartridge/scripts/middleware/cache');
 
 /**
  * @name Swapi-Show
@@ -22,7 +21,6 @@ server.get('Show', function (req, res, next) {
     res.render('swapi', {
         swapiInfo: swapiInfo
     });
-    // res.json({swapiInfo})
     next();
 });
 
