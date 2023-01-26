@@ -1,0 +1,4 @@
+<div class="container">
+    <h2 class="text-center">Cat fact of the day:</h2>
+    <h2 class="text-center">${pdict.catFact.fact}</h2>
+</div>
