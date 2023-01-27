@@ -16,7 +16,15 @@ function getStarshipInfo(data) {
                 return args;
             },
             parseResponse: function (svc, client) {
-                return client.text;
+                let result;
+
+                try {
+                    result = JSON.parse(client.text);
+                } catch (error) {
+                    result = client.text;
+                }
+
+                return result;
             },
             filterLogMessage: function (msg) {
                 return msg.replace(
