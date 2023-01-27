@@ -6,12 +6,12 @@
  * @function
  * @returns {JSON} Response from the swapi api
  */
-function getStarshipInfo() {
+function getStarshipInfo(data) {
     const swapiService = dw.svc.LocalServiceRegistry.createService(
         'http.swapi.getswapiinfo',
         {
             createRequest: function (svc, args) {
-                svc.URL += 'starships/9';
+                svc.URL += `${data.category}/${data.id}`;
                 svc.setRequestMethod('GET');
                 return args;
             },
@@ -26,8 +26,7 @@ function getStarshipInfo() {
             }
         });
 
-    const serviceResponse = swapiService.call().object;
-    return serviceResponse;
+    return swapiService;
 }
 
 module.exports = {
