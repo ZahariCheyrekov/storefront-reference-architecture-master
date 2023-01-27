@@ -11,6 +11,7 @@ function getStarshipInfo() {
         'http.swapi.getswapiinfo',
         {
             createRequest: function (svc, args) {
+                svc.URL += 'starships/9';
                 svc.setRequestMethod('GET');
                 return args;
             },
