@@ -19,17 +19,9 @@ function getStarshipInfo() {
             },
             filterLogMessage: function (msg) {
                 return msg.replace(
-                    /cost_in_credits\: \".*?\"/,
-                    "cost_in_credits:$$$$$$$$$$$$$$$$$$$"
+                    /cost_in_credits":"\d+/,
+                    "cost_in_credits: $$$$$$$$$$$$$$$$$$$"
                 );
-            },
-            getRequestLogMessage: function(msg) {
-                // Convert to a String here, doing any filtering...
-                return msg;
-            },
-            getResponseLogMessage: function(msg) {
-                // Convert to a String here, doing any filtering...
-                return msg;
             }
         });
 
