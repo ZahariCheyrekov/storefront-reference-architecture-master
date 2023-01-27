@@ -16,7 +16,9 @@ const swapiService = require('*/cartridge/scripts/swapiService');
  * @param {serverfunction} - get
  */
 server.get('Show', function (req, res, next) {
-    const swapiInfo = JSON.parse(swapiService.getStarshipInfo());
+    const { category, id } = req.querystring;
+    const result = swapiService.getStarshipInfo({ category, id }).call().object;
+    const swapiInfo = JSON.parse(result);
 
     res.render('swapi', {
         swapiInfo: swapiInfo
