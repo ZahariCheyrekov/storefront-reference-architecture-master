@@ -11,6 +11,10 @@
         {
             "name": "app.payment.form.processor.practice_payment_card",
             "script": "./cartridge/scripts/hooks/payment/processor/practice_payment_card_form_processor"
+        },
+        {
+            "name": "dw.ocapi.shop.customer.addresses.beforePOST",
+            "script": "./cartridge/scripts/hooks/customer/addresses.js"
         }
     ]
 }
