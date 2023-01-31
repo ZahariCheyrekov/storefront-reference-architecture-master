@@ -5,6 +5,11 @@
                 "@type-id": "custom.DemoJob",
                 "description": "My custom script step type",
                 "module": "app_custom_cartridge/cartridge/scripts/steps/DemoJob"
+            },
+            {
+                "@type-id": "custom.SubscriptionJob",
+                "description": "My custom script step type",
+                "module": "app_custom_job/cartridge/scripts/steps/SubscriptioonModuleJob"
             }
         ]
     }
