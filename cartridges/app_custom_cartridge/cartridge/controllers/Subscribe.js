@@ -32,4 +32,36 @@ server.get(
     }
 );
 
+server.post(
+    'Handler',
+    csrfProtection.validateAjaxRequest,
+    server.middleware.https,
+    function (req, res, next) {
+        var subscriptionDataForm = server.forms.getForm('subscription');
+        var URLUtils = require('dw/web/URLUtils');
+        var CustomObjectMgr = require('dw/object/CustomObjectMgr');
+        var Transaction = require('dw/system/Transaction');
+        var UUIDUtils = require('dw/util/UUIDUtils');
+
+        Transaction.wrap(function () {
+            var CustomObject = CustomObjectMgr.createCustomObject(
+                'SUBSCRIPTION_FORM',
+                subscriptionDataForm.email.value
+            );
+            CustomObject.custom.firstName = subscriptionDataForm.firstName.value;
+            CustomObject.custom.lastName = subscriptionDataForm.lastName.value;
+            CustomObject.custom.email = subscriptionDataForm.email.value;
+            // CustomObject.custom.gender = subscriptionDataForm.gender.value;
+
+            res.json({
+                success: true,
+                redirectUrl: URLUtils.url(
+                    'Subscribe-Show'
+                ).toString(),
+            });
+        });
+        next();
+    }
+);
+
 module.exports = server.exports();
