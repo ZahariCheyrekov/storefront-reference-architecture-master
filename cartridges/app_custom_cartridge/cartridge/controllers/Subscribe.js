@@ -5,6 +5,7 @@ var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
 var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 
 /**
+ * Subscribe-Show: This endpoint is called when user type Subscribe-Show
  * @name Subscribe-Show
  * @funciton
  * @memberof Subscribe
@@ -12,9 +13,8 @@ var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
  * @param {middleware} - csrfProtection.generateToken
  * @param {middleware} - server.middleware.https
  * @param {renders} - isml
- * @param {serverfunction} = get
+ * @param {serverfunction} - get
  */
-
 server.get(
     'Show',
     server.middleware.https,
@@ -32,6 +32,17 @@ server.get(
     }
 );
 
+/**
+ * Subscribe-Handler: This endpoint is called when subscription form is submited
+ * @name Subscribe-Hanler
+ * @funciton
+ * @memberof Subscribe
+ * @param {middleware} - consentTracking.consent
+ * @param {middleware} - csrfProtection.generateToken
+ * @param {middleware} - server.middleware.https
+ * @param {renders} - isml
+ * @param {serverfunction} - post
+ */
 server.post(
     'Handler',
     csrfProtection.validateAjaxRequest,
