@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+
+    <field
+        formid="firstName"
+        label="label.input.firstName.subscription"
+        mandatory="true"
+        max-length="50"
+        missing-error="error.message.required"
+        range-error="error.message.50orless"
+        type="string" />
+
+    <field
+        formid="lastName"
+        label="label.input.lastName.subscription"
+        mandatory="true"
+        max-length="50"
+        missing-error="error.message.required"
+        range-error="error.message.50orless"
+        type="string" />
+
+    <field
+        formid="email"
+        label="label.input.email.subscription"
+        mandatory="true"
+        max-length="50"
+        missing-error="error.message.required"
+        parse-error="error.message.parse.email.subscription.form"
+        range-error="error.message.50orless"
+        regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"
+        value-error="ValueErrorText"
+        type="string" />
+
+    <field
+        formid="gender"
+        label="label.input.gender.subscription"
+        mandatory="false"
+        max-length="50"
+        missing-error="error.message.required"
+        parse-error="error.message.parse.email.subscription.form"
+        range-error="error.message.50orless"
+        regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$"
+        value-error="ValueErrorText"
+        type="string" />
+</form>
