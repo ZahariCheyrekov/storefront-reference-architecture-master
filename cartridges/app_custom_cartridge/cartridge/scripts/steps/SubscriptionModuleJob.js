@@ -4,6 +4,7 @@ var FileWriter = require('dw/io/FileWriter');
 var CSVStreamWriter = require('dw/io/CSVStreamWriter');
 
 module.exports.execute = function () {
+    var x = 10;
     var sfCustomObject = CustomObjectMgr.getAllCustomObjects('SUBSCRIPTION_FORM');
 
     var fileWriter;
