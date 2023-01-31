@@ -62,7 +62,7 @@ server.post(
             CustomObject.custom.firstName = subscriptionDataForm.firstName.value;
             CustomObject.custom.lastName = subscriptionDataForm.lastName.value;
             CustomObject.custom.email = subscriptionDataForm.email.value;
-            // CustomObject.custom.gender = subscriptionDataForm.gender.value;
+            CustomObject.custom.gender = subscriptionDataForm.gender.value;
 
             res.json({
                 success: true,
