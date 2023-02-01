@@ -17,13 +17,13 @@ module.exports.execute = function () {
         csv = new CSVStreamWriter(fileWriter);
 
         while (sfCustomObject.hasNext()) {
-            var sfObject = sfCustomObject.next();
-            csv.writeNext(sfObject.firstName);
-            csv.writeNext(sfObject.lastName);
-            csv.writeNext(sfObject.email);
+            var current = sfCustomObject.next();
+            csv.writeNext(current.firstName);
+            csv.writeNext(current.lastName);
+            csv.writeNext(current.email);
 
             Transaction.wrap(function () {
-                CustomObjetMgr.remove(sfObject);
+                CustomObjetMgr.remove(current);
             });
         }
     } catch (e) {
