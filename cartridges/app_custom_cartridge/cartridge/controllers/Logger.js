@@ -18,10 +18,10 @@ var server = require('server');
 server.get('Show', function (req, res, next) {
     const Logger = require('dw/system/Logger');
     const group = 'newsletter';
-    const logger = Loger.getLogger(group);
+    const logger = Logger.getLogger(group);
     logger.debug('Test log message for {0}', group);
 
-    res.render('exampleA');
+    res.render('example/exampleA');
     next();
 });
 
