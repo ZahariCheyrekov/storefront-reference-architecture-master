@@ -2,6 +2,7 @@ var CustomObjectMgr = require('dw/object/CustomObjectMgr');
 var File = require('dw/io/File');
 var FileWriter = require('dw/io/FileWriter');
 var CSVStreamWriter = require('dw/io/CSVStreamWriter');
+var Transaction = require('dw/system/Transaction');
 
 module.exports.execute = function () {
     var x = 10;
@@ -23,7 +24,7 @@ module.exports.execute = function () {
             csv.writeNext(current.email);
 
             Transaction.wrap(function () {
-                CustomObjetMgr.remove(current);
+                CustomObjectMgr.remove(current);
             });
         }
     } catch (e) {
