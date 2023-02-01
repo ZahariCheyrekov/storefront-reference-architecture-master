@@ -1,35 +1,46 @@
-var CustomObjectMgr = require('dw/object/CustomObjectMgr');
-var File = require('dw/io/File');
-var FileWriter = require('dw/io/FileWriter');
-var CSVStreamWriter = require('dw/io/CSVStreamWriter');
-var Transaction = require('dw/system/Transaction');
+'use strict';
 
-module.exports.execute = function () {
-    var x = 10;
-    var sfCustomObject = CustomObjectMgr.getAllCustomObjects('SUBSCRIPTION_FORM');
+const CustomObjectMgr = require('dw/object/CustomObjectMgr');
+const File = require('dw/io/File');
+const FileWriter = require('dw/io/FileWriter');
+const CSVStreamWriter = require('dw/io/CSVStreamWriter');
+const Transaction = require('dw/system/Transaction');
 
-    var fileWriter;
-    var csv;
+const OBJECT_TYPE = 'SUBSCRIPTION_FORM';
 
+/**
+ * Execute custom job step
+ */
+exports.execute = function () {
+    const demoObjectIterator = CustomObjectMgr.getAllCustomObjects(OBJECT_TYPE);
+
+    const file = new File(
+        [File.IMPEX, 'subscription.csv'].join(File.SEPARATOR)
+    );
+    const fileWriter = new FileWriter(file);
+    const csvw = new CSVStreamWriter(fileWriter);
+
+    csvw.writeNext(['E-Mail', 'First Name', 'Last Name', 'Gender']);
     try {
-        var file = new File([File.IMPEX, 'subscription.csv'].join(File.SEPARATOR));
-        fileWriter = new FileWriter(file);
+        while (demoObjectIterator.hasNext()) {
+            let curr = demoObjectIterator.next();
 
-        csv = new CSVStreamWriter(fileWriter);
+            const gender = curr.custom.gender ? curr.custom.gender.value : '';
+            csvw.writeNext([
+                curr.custom['email'],
+                curr.custom.firstName,
+                curr.custom.lastName,
+                gender,
+            ]);
 
-        while (sfCustomObject.hasNext()) {
-            var current = sfCustomObject.next();
-            csv.writeNext(current.firstName);
-            csv.writeNext(current.lastName);
-            csv.writeNext(current.email);
-
-            Transaction.wrap(function () {
-                CustomObjectMgr.remove(current);
+            Transaction.wrap(() => {
+                CustomObjectMgr.remove(curr);
             });
         }
     } catch (e) {
+        csvw.writeNext(['Error: ', e.message]);
     } finally {
-        csv.close();
+        csvw.close();
         fileWriter.close();
     }
 };
