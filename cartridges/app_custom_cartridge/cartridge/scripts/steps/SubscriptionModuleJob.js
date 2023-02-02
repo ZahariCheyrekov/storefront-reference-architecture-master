@@ -9,7 +9,9 @@ const Transaction = require('dw/system/Transaction');
 const OBJECT_TYPE = 'SUBSCRIPTION_FORM';
 
 /**
- * Execute custom job step
+ * Executes custom job step from subscription form
+ * @function
+ * @namespace execute
  */
 exports.execute = function () {
     const demoObjectIterator = CustomObjectMgr.getAllCustomObjects(OBJECT_TYPE);
