@@ -14,7 +14,7 @@
         },
         {
             "name": "dw.ocapi.shop.customer.addresses.beforePOST",
-            "script": "./cartridge/scripts/hooks/customer/addresses.js"
+            "script": "./cartridge/scripts/hooks/customer/addresses.js" 
         }
     ]
 }
